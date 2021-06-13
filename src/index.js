@@ -47,7 +47,7 @@ class WebpackESBuildPlugin {
     });
 
     compiler.hooks.watchRun.tap(plugin, (compiler) => {
-      const changedFiles = Object.keys(compiler.watchFileSystem.watcher.mtimes).map((file) => file.replace(`${__dirname}/`, ''));
+      const changedFiles = Object.keys(compiler.watchFileSystem.watcher.mtimes).map(file => file.replace(`${process.cwd()}/`, ''));
       if (changedFiles.length > 0) {
         this.logger.info(`文件发生改动：${changedFiles.join(', ')}`);
       }
