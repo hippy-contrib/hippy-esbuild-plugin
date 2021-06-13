@@ -1,0 +1,24 @@
+{
+  "name": "@tencent/webpack-esbuild-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.woa.com:ricoxiao/webpack-esbuild-plugin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tencent/eslint-config-tencent": "^0.14.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "dependencies": {
+    "signale": "^1.4.0"
+  }
+}
