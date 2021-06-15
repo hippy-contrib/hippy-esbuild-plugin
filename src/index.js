@@ -13,7 +13,7 @@ const plugin = 'WebpackESBuildPlugin';
 class WebpackESBuildPlugin {
   constructor(options = {}) {
     // eslint-disable-next-line no-console
-    this.logger = options?.logger
+    this.logger = options.logger
       || new Signale({
         config: {
           displayLabel: false,
@@ -32,13 +32,14 @@ class WebpackESBuildPlugin {
       // eslint-disable-next-line no-param-reassign
       compiler.options.module.rules = compiler.options.module.rules.map((rule) => {
         const { test, use } = rule;
-        const loaderMatch = test.toString().match(/[jt]sx?/)?.[0];
-        if (!loaderMatch) return rule;
+        const loaderMatch = test.toString().match(/[jt]sx?/);
+        const loader = loaderMatch ? loaderMatch[0] : '';
+        if (!loader) return rule;
 
         const filteredUse = use.filter(({ loader }) => !['babel-loader', 'ts-loader'].includes(loader));
         return {
           test,
-          use: [getEsbuildLoader(loaderMatch), ...filteredUse],
+          use: [getEsbuildLoader(loader), ...filteredUse],
         };
       });
 
