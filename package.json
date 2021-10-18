@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.woa.com:ricoxiao/webpack-esbuild-plugin.git"
+    "url": "https://github.com/hippy-contrib/webpack-esbuild-plugin"
   },
   "keywords": [],
   "author": "",
